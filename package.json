@@ -1,16 +1,17 @@
 {
-  "name": "material-dashboard-3-pro-react",
-  "version": "2.4.0",
+  "name": "LINGSSOFT Dashboard",
+  "version": "1.0.0",
   "private": true,
-  "author": "Creative Tim",
-  "license": "See license in https://www.creative-tim.com/license",
-  "description": "React version of Material Dashboard 3 PRO by Creative Tim",
+  "homepage": "http://LINGS-nenji.github.io/lingssoft-dashboard",
+  "author": "LINGS-nenji",
+  "license": "See license in Freelancer License",
+  "description": "LINGSSOFT 공식 홈페이지 - AI, 보안, 교육 솔루션 전문 기업",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues"
+    "url": "https://lings-nenji.github.io/lingssoft-site/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/ct-material-dashboard-pro-react.git"
+    "url": "git+https://github.com/LINGS-nenji/lingssoft-dashboard.git"
   },
   "dependencies": {
     "@asseinfo/react-kanban": "2.2.0",
@@ -57,7 +58,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --fix --quiet"
+    "lint": "eslint \"src/**/*.{js,jsx}\" --fix --quiet",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -83,7 +86,8 @@
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "7.37.2",
-    "eslint-plugin-react-hooks": "5.0.0"
+    "eslint-plugin-react-hooks": "5.0.0",
+    "gh-pages": "^6.3.0"
   },
   "overrides": {
     "svgo": "3.0.2"
