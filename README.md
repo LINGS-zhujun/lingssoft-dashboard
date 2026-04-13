@@ -16,7 +16,7 @@ This repository hosts the official LINGSSOFT Dashboard. The project is based on 
 ### Installation
 ```bash
 # Install dependencies
-npm install
+npm install --legacy-peer-deps
 ```
 
 ### Development
