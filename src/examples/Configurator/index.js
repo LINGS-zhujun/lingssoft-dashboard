@@ -327,7 +327,6 @@ function Configurator() {
         </MDBox>
         <Divider />
       </MDBox>
-      </MDBox>
     </ConfiguratorRoot>
   );
 }
