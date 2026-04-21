@@ -592,6 +592,8 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
           </MDBox>
           <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} alignItems="center" m={0} p={0}>
             {renderNavbarItems}
+          </MDBox>
+          <MDBox display="flex" alignItems="center">
             <MDBox
               display="flex"
               alignItems="center"
@@ -602,47 +604,47 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
             >
               <Icon fontSize="medium">language</Icon>
             </MDBox>
-          </MDBox>
 
-          {action &&
-            (action.type === "internal" ? (
-              <MDBox display={{ xs: "none", lg: "inline-block" }}>
-                <MDButton
-                  component={Link}
-                  to={action.route}
-                  variant="gradient"
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MDButton>
-              </MDBox>
-            ) : (
-              <MDBox display={{ xs: "none", lg: "inline-block" }}>
-                <MDButton
-                  component="a"
-                  href={action.route}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant="gradient"
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                  sx={{ mt: -0.3 }}
-                >
-                  {action.label}
-                </MDButton>
-              </MDBox>
-            ))}
-          <MDBox
-            display={{ xs: "inline-block", lg: "none" }}
-            lineHeight={0}
-            py={1.5}
-            pl={1.5}
-            color={transparent ? "white" : "inherit"}
-            sx={{ cursor: "pointer" }}
-            onClick={openMobileNavbar}
-          >
-            <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
+            {action &&
+              (action.type === "internal" ? (
+                <MDBox display={{ xs: "none", lg: "inline-block" }} ml={2}>
+                  <MDButton
+                    component={Link}
+                    to={action.route}
+                    variant="gradient"
+                    color={action.color ? action.color : "info"}
+                    size="small"
+                  >
+                    {action.label}
+                  </MDButton>
+                </MDBox>
+              ) : (
+                <MDBox display={{ xs: "none", lg: "inline-block" }} ml={2}>
+                  <MDButton
+                    component="a"
+                    href={action.route}
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="gradient"
+                    color={action.color ? action.color : "info"}
+                    size="small"
+                    sx={{ mt: -0.3 }}
+                  >
+                    {action.label}
+                  </MDButton>
+                </MDBox>
+              ))}
+            <MDBox
+              display={{ xs: "inline-block", lg: "none" }}
+              lineHeight={0}
+              py={1.5}
+              pl={1.5}
+              color={transparent ? "white" : "inherit"}
+              sx={{ cursor: "pointer" }}
+              onClick={openMobileNavbar}
+            >
+              <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
+            </MDBox>
           </MDBox>
         </MDBox>
         <MDBox

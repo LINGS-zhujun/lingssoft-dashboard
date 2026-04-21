@@ -199,40 +199,7 @@ function DefaultNavbarMobile({ routes, open }) {
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
       <MDBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
         {renderNavbarItems}
-        <DefaultNavbarDropdown
-          name="Language"
-          icon={<Icon>language</Icon>}
-          collapseStatus={collapse === "language"}
-          onClick={() => handleSetCollapse("language")}
-          collapse
-        >
-          <MDBox sx={{ height: "auto", maxHeight: "15rem", overflowY: "scroll" }}>
-            <MDBox px={2}>
-              <NotificationItem
-                icon={<Icon>language</Icon>}
-                title="한국어"
-                onClick={() => handleLanguageChange("ko")}
-              />
-              <NotificationItem
-                icon={<Icon>language</Icon>}
-                title="English"
-                onClick={() => handleLanguageChange("en")}
-              />
-              <NotificationItem
-                icon={<Icon>language</Icon>}
-                title="日本語"
-                onClick={() => handleLanguageChange("ja")}
-              />
-              <NotificationItem
-                icon={<Icon>language</Icon>}
-                title="中文"
-                onClick={() => handleLanguageChange("zh")}
-              />
-            </MDBox>
-          </MDBox>
-        </DefaultNavbarDropdown>
       </MDBox>
-
     </Collapse>
   );
 }
