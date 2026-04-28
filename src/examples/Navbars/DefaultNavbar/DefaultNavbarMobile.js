@@ -41,7 +41,7 @@ import NotificationItem from "examples/Items/NotificationItem";
 
 function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation("sidebar");
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
@@ -54,7 +54,7 @@ function DefaultNavbarMobile({ routes, open }) {
     ({ name, icon, collapse: routeCollapses, href, route, collapse: navCollapse }) => (
       <DefaultNavbarDropdown
         key={name}
-        name={name}
+        name={t(name)}
         icon={icon}
         collapseStatus={name === collapse}
         onClick={() => handleSetCollapse(name)}
@@ -89,7 +89,7 @@ function DefaultNavbarMobile({ routes, open }) {
                         fontWeight="bold"
                         textTransform="capitalize"
                       >
-                        {item.name}
+                        {t(item.name)}
                       </MDTypography>
                     </MDBox>
                     {item.collapse.map((el, index) => (
@@ -120,7 +120,7 @@ function DefaultNavbarMobile({ routes, open }) {
                           },
                         })}
                       >
-                        {el.name}
+                        {t(el.name)}
                       </MDTypography>
                     ))}
                   </>
@@ -172,7 +172,7 @@ function DefaultNavbarMobile({ routes, open }) {
                         mt={!item.description ? 0.25 : 0}
                         textTransform="capitalize"
                       >
-                        {item.name || "&nbsp"}
+                        {t(item.name) || "&nbsp"}
                       </MDTypography>
                       {item.description && (
                         <MDTypography
