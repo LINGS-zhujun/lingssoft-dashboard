@@ -248,20 +248,20 @@ function DashboardNavbar({ absolute = false, light = false, isMini = false }) {
                 disableRipple
                 color="inherit"
                 sx={navbarIconButton}
-                onClick={handleConfiguratorOpen}
-              >
-                <Icon sx={iconsStyle}>settings</Icon>
-              </IconButton>
-              <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                sx={navbarIconButton}
                 onClick={handleOpenLanguageMenu}
               >
                 <Icon sx={iconsStyle}>language</Icon>
               </IconButton>
               {renderLanguageMenu()}
+              <IconButton
+                size="small"
+                disableRipple
+                color="inherit"
+                sx={navbarIconButton}
+                onClick={handleConfiguratorOpen}
+              >
+                <Icon sx={iconsStyle}>settings</Icon>
+              </IconButton>
               <IconButton
                 size="small"
                 disableRipple
