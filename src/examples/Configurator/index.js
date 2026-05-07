@@ -54,8 +54,10 @@ import {
 } from "context";
 
 function Configurator() {
-  const { t } = useTranslation("configurator");
+  const { t, i18n } = useTranslation("configurator");
   const [controller, dispatch] = useMaterialUIController();
+
+  const handleLanguageChange = (lang) => i18n.changeLanguage(lang);
 
   const {
     openConfigurator,
@@ -339,6 +341,55 @@ function Configurator() {
           <Switch checked={darkMode} onChange={handleDarkMode} />
         </MDBox>
         <Divider />
+
+        {/* Language Selection */}
+        <MDBox mt={3} lineHeight={1}>
+          <MDTypography variant="h6">{t("language")}</MDTypography>
+          <MDBox sx={{ display: "flex", mt: 2 }}>
+            <MDButton
+              color="dark"
+              variant="gradient"
+              onClick={() => handleLanguageChange("ko")}
+              fullWidth
+              sx={i18n.language.startsWith("ko") ? sidenavTypeActiveButtonStyles : sidenavTypeButtonsStyles}
+            >
+              한국어
+            </MDButton>
+            <MDBox sx={{ ml: 1, width: "100%" }}>
+              <MDButton
+                color="dark"
+                variant="gradient"
+                onClick={() => handleLanguageChange("en")}
+                fullWidth
+                sx={i18n.language.startsWith("en") ? sidenavTypeActiveButtonStyles : sidenavTypeButtonsStyles}
+              >
+                English
+              </MDButton>
+            </MDBox>
+          </MDBox>
+          <MDBox sx={{ display: "flex", mt: 1 }}>
+            <MDButton
+              color="dark"
+              variant="gradient"
+              onClick={() => handleLanguageChange("ja")}
+              fullWidth
+              sx={i18n.language.startsWith("ja") ? sidenavTypeActiveButtonStyles : sidenavTypeButtonsStyles}
+            >
+              日本語
+            </MDButton>
+            <MDBox sx={{ ml: 1, width: "100%" }}>
+              <MDButton
+                color="dark"
+                variant="gradient"
+                onClick={() => handleLanguageChange("zh")}
+                fullWidth
+                sx={i18n.language.startsWith("zh") ? sidenavTypeActiveButtonStyles : sidenavTypeButtonsStyles}
+              >
+                中文
+              </MDButton>
+            </MDBox>
+          </MDBox>
+        </MDBox>
       </MDBox>
     </ConfiguratorRoot>
   );
