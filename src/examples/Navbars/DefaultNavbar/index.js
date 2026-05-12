@@ -66,6 +66,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
   const [arrowRef, setArrowRef] = useState(null);
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
+  const { t, i18n } = useTranslation("sidebar");
   const [openLanguageMenu, setOpenLanguageMenu] = useState(false);
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
