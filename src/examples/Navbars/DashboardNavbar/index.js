@@ -37,6 +37,7 @@ import Icon from "@mui/material/Icon";
 import MDBox from "components/MDBox";
 import MDInput from "components/MDInput";
 import MDBadge from "components/MDBadge";
+import MDTypography from "components/MDTypography";
 
 // Material Dashboard 3 PRO React examples
 import Breadcrumbs from "examples/Breadcrumbs";
