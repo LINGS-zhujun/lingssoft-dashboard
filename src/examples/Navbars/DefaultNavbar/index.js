@@ -535,6 +535,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                 </MDTypography>
               }
               title="English"
+              fontWeight={i18n.language.startsWith("en") ? "bold" : "regular"}
               onClick={() => handleLanguageChange("en")}
             />
             <NotificationItem
@@ -544,6 +545,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                 </MDTypography>
               }
               title="한국어"
+              fontWeight={i18n.language.startsWith("ko") ? "bold" : "regular"}
               onClick={() => handleLanguageChange("ko")}
             />
             <NotificationItem
@@ -553,6 +555,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                 </MDTypography>
               }
               title="日本語"
+              fontWeight={i18n.language.startsWith("ja") ? "bold" : "regular"}
               onClick={() => handleLanguageChange("ja")}
             />
             <NotificationItem
@@ -562,6 +565,7 @@ function DefaultNavbar({ routes, brand = "", transparent = false, light = false,
                 </MDTypography>
               }
               title="中文"
+              fontWeight={i18n.language.startsWith("zh") ? "bold" : "regular"}
               onClick={() => handleLanguageChange("zh")}
             />
           </MDBox>
