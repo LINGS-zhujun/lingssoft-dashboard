@@ -49,6 +49,7 @@ import {
   setMiniSidenav,
   setTransparentSidenav,
   setWhiteSidenav,
+  setDarkMode,
 } from "context";
 
 function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
@@ -74,6 +75,7 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
   }
 
   const closeSidenav = () => setMiniSidenav(dispatch, true);
+  const handleDarkMode = () => setDarkMode(dispatch, !darkMode);
 
   useEffect(() => {
     setOpenCollapse(collapseName);
@@ -278,11 +280,22 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </MDTypography>
         </MDBox>
-        <MDBox component={NavLink} to="/" display="flex" alignItems="center">
-          {brand && (
-            <MDBox component="img" src={brand} alt="Brand" width="1.75rem" />
-          )}
+        <MDBox display="flex" alignItems="center">
           <MDBox
+            display="flex"
+            alignItems="center"
+            onClick={handleDarkMode}
+            sx={{ cursor: "pointer", pl: 1, pr: 1.5 }}
+          >
+            <Icon fontSize="medium" sx={{ color: textColor }}>
+              {darkMode ? "light_mode" : "dark_mode"}
+            </Icon>
+          </MDBox>
+          <MDBox
+            component={NavLink}
+            to="/"
+            display="flex"
+            alignItems="center"
             width={!brandName && "100%"}
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
