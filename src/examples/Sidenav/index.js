@@ -74,6 +74,17 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
   }
 
   const closeSidenav = () => setMiniSidenav(dispatch, true);
+  const handleSidenavToggle = () => {
+    if (!whiteSidenav && !transparentSidenav) {
+      // Currently dark -> make it white
+      setWhiteSidenav(dispatch, true);
+      setTransparentSidenav(dispatch, false);
+    } else {
+      // Currently white or transparent -> make it dark
+      setWhiteSidenav(dispatch, false);
+      setTransparentSidenav(dispatch, false);
+    }
+  };
 
   useEffect(() => {
     setOpenCollapse(collapseName);
@@ -278,11 +289,22 @@ function Sidenav({ color = "info", brand = "", brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </MDTypography>
         </MDBox>
-        <MDBox component={NavLink} to="/" display="flex" alignItems="center">
-          {brand && (
-            <MDBox component="img" src={brand} alt="Brand" width="1.75rem" />
-          )}
+        <MDBox display="flex" alignItems="center">
           <MDBox
+            display="flex"
+            alignItems="center"
+            onClick={handleSidenavToggle}
+            sx={{ cursor: "pointer", pl: 1, pr: 1.5 }}
+          >
+            <Icon fontSize="medium" sx={{ color: textColor }}>
+              {(!whiteSidenav && !transparentSidenav) ? "light_mode" : "dark_mode"}
+            </Icon>
+          </MDBox>
+          <MDBox
+            component={NavLink}
+            to="/"
+            display="flex"
+            alignItems="center"
             width={!brandName && "100%"}
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
