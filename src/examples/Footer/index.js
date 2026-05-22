@@ -29,12 +29,12 @@ import MDTypography from "components/MDTypography";
 import typography from "assets/theme/base/typography";
 
 function Footer({ 
-  company = { href: "https://lings-nenji.github.io/lingssoft-site", name: "app.footer.company" }, 
+  company = { href: "https://eco.lingssoft.com", name: "app.footer.company" }, 
   links = [
-    { href: "https://lings-nenji.github.io/lingssoft-site", name: "app.name" },
-    { href: "https://lings-nenji.github.io/lingssoft-site/#/pages/company/about-us", name: "app.footer.about_us" },
+    { href: "https://eco.lingssoft.com", name: "app.name" },
+    { href: "https://eco.lingssoft.com/#/pages/company/about-us", name: "app.footer.about_us" },
     { href: "#", name: "app.footer.blog" },
-    { href: "https://lings-nenji.github.io/lingssoft-site/#/pages/support/license", name: "app.footer.license" },
+    { href: "https://eco.lingssoft.com/#/pages/support/license", name: "app.footer.license" },
   ] 
 }) {
   const { t } = useTranslation();

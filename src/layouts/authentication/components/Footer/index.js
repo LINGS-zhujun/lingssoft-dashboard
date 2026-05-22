@@ -53,7 +53,7 @@ function Footer({ light = false }) {
             fontSize={size.sm}
           >
             &copy; {new Date().getFullYear()}, {t("app.footer.copyright")}
-            <Link href="https://lings-nenji.github.io/lingssoft-site" target="_blank">
+            <Link href="https://eco.lingssoft.com" target="_blank">
               <MDTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
                 &nbsp;{t("app.footer.company")}&nbsp;
               </MDTypography>
@@ -77,7 +77,7 @@ function Footer({ light = false }) {
             })}
           >
             <MDBox component="li" pr={2} lineHeight={1}>
-              <Link href="https://lings-nenji.github.io/lingssoft-site" target="_blank">
+              <Link href="https://eco.lingssoft.com" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
@@ -88,7 +88,7 @@ function Footer({ light = false }) {
               </Link>
             </MDBox>
             <MDBox component="li" px={2} lineHeight={1}>
-              <Link href="https://lings-nenji.github.io/lingssoft-site/#/pages/company/about-us" target="_blank">
+              <Link href="https://eco.lingssoft.com/#/pages/company/about-us" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
@@ -110,7 +110,7 @@ function Footer({ light = false }) {
               </Link>
             </MDBox>
             <MDBox component="li" pl={2} lineHeight={1}>
-              <Link href="https://lings-nenji.github.io/lingssoft-site/#/pages/support/license" target="_blank">
+              <Link href="https://eco.lingssoft.com/#/pages/support/license" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
