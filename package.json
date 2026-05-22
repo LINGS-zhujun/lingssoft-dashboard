@@ -2,12 +2,12 @@
   "name": "LINGSSOFT Dashboard",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://LINGS-nenji.github.io/lingssoft-dashboard",
+  "homepage": "http://eco.lingssoft.com",
   "author": "LINGS-nenji",
   "license": "See license in Freelancer License",
   "description": "LINGSSOFT 공식 홈페이지 - AI, 보안, 교육 솔루션 전문 기업",
   "bugs": {
-    "url": "https://lings-nenji.github.io/lingssoft-site/"
+    "url": "https://eco.lingssoft.com/"
   },
   "repository": {
     "type": "git",
