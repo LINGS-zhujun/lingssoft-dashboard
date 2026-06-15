@@ -38,6 +38,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 import MDAvatar from "components/MDAvatar";
+import MDInput from "components/MDInput";
 
 // Custom styles for the Configurator
 import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
@@ -53,6 +54,7 @@ import {
   setSidenavColor,
   setDarkMode,
   setChatbotSaveHistory,
+  setChatbotAiUrl,
 } from "context";
 
 function Configurator() {
@@ -70,6 +72,7 @@ function Configurator() {
     whiteSidenav,
     darkMode,
     chatbotSaveHistory,
+    chatbotAiUrl,
   } = controller;
   const [disabled, setDisabled] = useState(false);
   const sidenavColors = [
@@ -115,6 +118,7 @@ function Configurator() {
   const handleFixedNavbar = () => setFixedNavbar(dispatch, !fixedNavbar);
   const handleChatbotSaveHistory = () =>
     setChatbotSaveHistory(dispatch, !chatbotSaveHistory);
+  const handleChatbotAiUrl = (event) => setChatbotAiUrl(dispatch, event.target.value);
   const handleDarkMode = () => {
     setDarkMode(dispatch, !darkMode);
     handleDarkSidenav();
@@ -396,6 +400,16 @@ function Configurator() {
 
 
           <Switch checked={darkMode} onChange={handleDarkMode} />
+        </MDBox>
+        <Divider />
+        <MDBox mt={2} mb={2}>
+          <MDInput
+            type="text"
+            label={t("chatbotAiUrl")}
+            value={chatbotAiUrl}
+            onChange={handleChatbotAiUrl}
+            fullWidth
+          />
         </MDBox>
         <Divider />
         <MDBox

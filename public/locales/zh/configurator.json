@@ -11,5 +11,6 @@
   "sidenavMini": "侧边栏迷你",
   "lightDark": "浅色 / 深色",
   "language": "语言选择",
-  "chatbotSaveHistory": "保存聊天记录"
+  "chatbotSaveHistory": "保存聊天记录",
+  "chatbotAiUrl": "AI URL"
 }

@@ -69,6 +69,9 @@ function reducer(state, action) {
     case "CHATBOT_SAVE_HISTORY": {
       return { ...state, chatbotSaveHistory: action.value };
     }
+    case "CHATBOT_AI_URL": {
+      return { ...state, chatbotAiUrl: action.value };
+    }
     case "DIRECTION": {
       return { ...state, direction: action.value };
     }
@@ -96,6 +99,7 @@ function MaterialUIControllerProvider({ children }) {
     openConfigurator: false,
     openChatbot: false,
     chatbotSaveHistory: getStoredBoolean("lingssoft-chatbot-save-history", true),
+    chatbotAiUrl: typeof window !== "undefined" ? window.localStorage.getItem("lingssoft-chatbot-ai-url") || "" : "",
     direction: "ltr",
     layout: "dashboard",
     darkMode: false,
@@ -150,6 +154,13 @@ const setChatbotSaveHistory = (dispatch, value) => {
 
   dispatch({ type: "CHATBOT_SAVE_HISTORY", value });
 };
+const setChatbotAiUrl = (dispatch, value) => {
+  if (typeof window !== "undefined") {
+    window.localStorage.setItem("lingssoft-chatbot-ai-url", value);
+  }
+
+  dispatch({ type: "CHATBOT_AI_URL", value });
+};
 const setDirection = (dispatch, value) =>
   dispatch({ type: "DIRECTION", value });
 const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
@@ -167,6 +178,7 @@ export {
   setOpenConfigurator,
   setOpenChatbot,
   setChatbotSaveHistory,
+  setChatbotAiUrl,
   setDirection,
   setLayout,
   setDarkMode,
