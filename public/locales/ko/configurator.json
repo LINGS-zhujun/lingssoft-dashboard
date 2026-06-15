@@ -11,5 +11,6 @@
   "sidenavMini": "사이드바 미니",
   "lightDark": "라이트 / 다크",
   "language": "언어 선택",
-  "chatbotSaveHistory": "채팅 내용 저장"
+  "chatbotSaveHistory": "채팅 내용 저장",
+  "chatbotAiUrl": "AI URL"
 }
