@@ -38,6 +38,7 @@ import {
   setMiniSidenav,
   setOpenConfigurator,
   setOpenChatbot,
+  setPageContext,
 } from "context";
 
 // Images
@@ -101,6 +102,34 @@ export default function App() {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
+  }, [pathname]);
+
+  // Automatically update page context based on the current route
+  useEffect(() => {
+    const findRouteByPath = (allRoutes, currentPath) => {
+      for (const route of allRoutes) {
+        if (route.collapse) {
+          const found = findRouteByPath(route.collapse, currentPath);
+          if (found) return found;
+        } else if (route.route === currentPath) {
+          return route;
+        }
+      }
+      return null;
+    };
+
+    const currentRoute = findRouteByPath(routes, pathname);
+    if (currentRoute) {
+      setPageContext(dispatch, {
+        title: currentRoute.name,
+        data: {
+          description: `User is viewing the ${currentRoute.name} page.`,
+          path: pathname,
+        },
+      });
+    } else {
+      setPageContext(dispatch, { title: "", data: null });
+    }
   }, [pathname]);
 
   const getRoutes = (allRoutes) =>
