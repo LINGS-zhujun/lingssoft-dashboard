@@ -10,6 +10,8 @@ import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 import IconButton from "@mui/material/IconButton";
 import CircularProgress from "@mui/material/CircularProgress";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 import MDBox from "components/MDBox";
 import MDInput from "components/MDInput";
@@ -42,6 +44,7 @@ function ChatbotPanel() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState(() => (chatbotSaveHistory ? getStoredMessages() : []));
   const [isLoading, setIsLoading] = useState(false);
+  const [sendPageContext, setSendPageContext] = useState(true);
 
   const handleCloseChatbot = () => setOpenChatbot(dispatch, false);
   const handleSendMessage = async (event) => {
@@ -65,7 +68,7 @@ function ChatbotPanel() {
 
     try {
       const payload = {
-        pageContext,
+        pageContext: sendPageContext ? pageContext : undefined,
         chatHistory: [...messages, newUserMessage].map(({ role, content }) => ({ role, content })),
       };
 
@@ -182,6 +185,7 @@ function ChatbotPanel() {
                     py={1.25}
                     mb={1}
                     coloredShadow={isUser ? "info" : "none"}
+                    sx={{ wordBreak: "break-word", whiteSpace: "pre-wrap" }}
                   >
                     <MDTypography variant="button" color={isUser ? "white" : (darkMode ? "white" : "dark")}>
                       {content}
@@ -223,37 +227,53 @@ function ChatbotPanel() {
         <MDBox
           component="form"
           display="flex"
-          alignItems="center"
-          gap={1}
+          flexDirection="column"
           pt={2}
           onSubmit={handleSendMessage}
           sx={({ palette: { background } }) => ({
             backgroundColor: darkMode ? background.sidenav : "transparent",
           })}
         >
-          <MDInput
-            fullWidth
-            label="Message"
-            placeholder="Ask something"
-            size="small"
-            value={message}
-            onChange={({ target }) => setMessage(target.value)}
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={sendPageContext}
+                onChange={(e) => setSendPageContext(e.target.checked)}
+                size="small"
+              />
+            }
+            label={
+              <MDTypography variant="button" color="text">
+                현재 페이지 내용 같이 전송
+              </MDTypography>
+            }
+            sx={{ ml: 0, mb: 1 }}
           />
-          <IconButton
-            type="submit"
-            color="inherit"
-            sx={({ palette: { gradients }, functions: { linearGradient } }) => ({
-              width: "2.5rem",
-              height: "2.5rem",
-              color: "#fff",
-              background: linearGradient(gradients.info.main, gradients.info.state),
-              "&:hover": {
+          <MDBox display="flex" alignItems="center" gap={1}>
+            <MDInput
+              fullWidth
+              label="Message"
+              placeholder="Ask something"
+              size="small"
+              value={message}
+              onChange={({ target }) => setMessage(target.value)}
+            />
+            <IconButton
+              type="submit"
+              color="inherit"
+              sx={({ palette: { gradients }, functions: { linearGradient } }) => ({
+                width: "2.5rem",
+                height: "2.5rem",
+                color: "#fff",
                 background: linearGradient(gradients.info.main, gradients.info.state),
-              },
-            })}
-          >
-            <Icon fontSize="small">send</Icon>
-          </IconButton>
+                "&:hover": {
+                  background: linearGradient(gradients.info.main, gradients.info.state),
+                },
+              })}
+            >
+              <Icon fontSize="small">send</Icon>
+            </IconButton>
+          </MDBox>
         </MDBox>
       </MDBox>
     </ConfiguratorRoot>
