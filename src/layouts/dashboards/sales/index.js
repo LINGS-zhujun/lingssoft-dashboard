@@ -23,6 +23,9 @@ import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 import Card from "@mui/material/Card";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDBadgeDot from "components/MDBadgeDot";
@@ -49,6 +52,8 @@ import salesTableData from "layouts/dashboards/sales/data/salesTableData";
 import dataTableData from "layouts/dashboards/sales/data/dataTableData";
 
 function Sales() {
+  const { t } = useTranslation("page_sales");
+
   // DefaultStatisticsCard state for the dropdown value
   const [salesDropdownValue, setSalesDropdownValue] = useState("6 May - 7 May");
   const [customersDropdownValue, setCustomersDropdownValue] = useState("6 May - 7 May");
@@ -100,12 +105,12 @@ function Sales() {
           <Grid container spacing={3}>
             <Grid item xs={12} sm={4}>
               <DefaultStatisticsCard
-                title="sales"
+                title={t("sales")}
                 count="$230,220"
                 percentage={{
                   color: "success",
                   value: "+55%",
-                  label: "since last month",
+                  label: t("since_last_month"),
                 }}
                 dropdown={{
                   action: openSalesDropdown,
@@ -116,12 +121,12 @@ function Sales() {
             </Grid>
             <Grid item xs={12} sm={4}>
               <DefaultStatisticsCard
-                title="customers"
+                title={t("customers")}
                 count="3.200"
                 percentage={{
                   color: "success",
                   value: "+12%",
-                  label: "since last month",
+                  label: t("since_last_month"),
                 }}
                 dropdown={{
                   action: openCustomersDropdown,
@@ -132,12 +137,12 @@ function Sales() {
             </Grid>
             <Grid item xs={12} sm={4}>
               <DefaultStatisticsCard
-                title="avg. revenue"
+                title={t("avg_revenue")}
                 count="$1.200"
                 percentage={{
                   color: "secondary",
                   value: "+$213",
-                  label: "since last month",
+                  label: t("since_last_month"),
                 }}
                 dropdown={{
                   action: openRevenueDropdown,
@@ -155,15 +160,15 @@ function Sales() {
             </Grid>
             <Grid item xs={12} sm={6} lg={8}>
               <DefaultLineChart
-                title="Revenue"
+                title={t("revenue")}
                 description={
                   <MDBox display="flex" justifyContent="space-between">
                     <MDBox display="flex" ml={-1}>
-                      <MDBadgeDot color="info" size="sm" badgeContent="Facebook Ads" />
-                      <MDBadgeDot color="dark" size="sm" badgeContent="Google Ads" />
+                      <MDBadgeDot color="info" size="sm" badgeContent={t("facebook_ads")} />
+                      <MDBadgeDot color="dark" size="sm" badgeContent={t("google_ads")} />
                     </MDBox>
                     <MDBox mt={-4} mr={-1} position="absolute" right="1.5rem">
-                      <Tooltip title="See which ads perform better" placement="left" arrow>
+                      <Tooltip title={t("ads_performance_tooltip")} placement="left" arrow>
                         <MDButton
                           variant="outlined"
                           color="secondary"
@@ -185,10 +190,10 @@ function Sales() {
         <MDBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={8}>
-              <HorizontalBarChart title="Sales by age" chart={horizontalBarChartData} />
+              <HorizontalBarChart title={t("sales_by_age")} chart={horizontalBarChartData} />
             </Grid>
             <Grid item xs={12} lg={4}>
-              <SalesTable title="Sales by Country" rows={salesTableData} />
+              <SalesTable title={t("sales_by_country")} rows={salesTableData} />
             </Grid>
           </Grid>
         </MDBox>
@@ -197,7 +202,7 @@ function Sales() {
             <Card>
               <MDBox pt={3} px={3}>
                 <MDTypography variant="h6" fontWeight="medium">
-                  Top Selling Products
+                  {t("top_selling")}
                 </MDTypography>
               </MDBox>
               <MDBox py={1}>

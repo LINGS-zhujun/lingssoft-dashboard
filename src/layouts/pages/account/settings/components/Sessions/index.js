@@ -23,7 +23,11 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDBadge from "components/MDBadge";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function Sessions() {
+  const { t } = useTranslation("page_settings");
   const actionButtonStyles = {
     "& .material-icons-round": {
       transform: `translateX(0)`,
@@ -39,11 +43,10 @@ function Sessions() {
     <Card id="sessions">
       <MDBox p={3} lineHeight={1}>
         <MDBox mb={1}>
-          <MDTypography variant="h5">Sessions</MDTypography>
+          <MDTypography variant="h5">{t("sess_title")}</MDTypography>
         </MDBox>
         <MDTypography variant="button" color="text" fontWeight="regular">
-          This is a list of devices that have logged into your account. Remove those that you do not
-          recognize.
+          {t("sess_desc")}
         </MDTypography>
       </MDBox>
       <MDBox pb={3} px={3} sx={{ overflow: "auto" }}>
@@ -62,7 +65,7 @@ function Sessions() {
                 Bucharest 68.133.163.201
               </MDTypography>
               <MDTypography variant="caption" color="text">
-                Your current session
+                {t("sess_current")}
               </MDTypography>
             </MDBox>
           </MDBox>
@@ -70,7 +73,7 @@ function Sessions() {
             <MDBadge
               variant="contained"
               size="xs"
-              badgeContent="active"
+              badgeContent={t("sess_active")}
               color="success"
               container
             />
@@ -87,7 +90,7 @@ function Sessions() {
               fontWeight="regular"
               sx={actionButtonStyles}
             >
-              See more&nbsp;
+              {t("sess_see_more")}&nbsp;
               <Icon sx={{ fontWeight: "bold", verticalAlign: "middle" }}>arrow_forward</Icon>
             </MDTypography>
           </MDBox>
@@ -123,7 +126,7 @@ function Sessions() {
               fontWeight="regular"
               sx={actionButtonStyles}
             >
-              See more&nbsp;
+              {t("sess_see_more")}&nbsp;
               <Icon sx={{ fontWeight: "bold", verticalAlign: "middle" }}>arrow_forward</Icon>
             </MDTypography>
           </MDBox>
@@ -159,7 +162,7 @@ function Sessions() {
               fontWeight="regular"
               sx={actionButtonStyles}
             >
-              See more&nbsp;
+              {t("sess_see_more")}&nbsp;
               <Icon sx={{ fontWeight: "bold", verticalAlign: "middle" }}>arrow_forward</Icon>
             </MDTypography>
           </MDBox>

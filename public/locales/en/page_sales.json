@@ -1,0 +1,13 @@
+{
+  "sales": "sales",
+  "since_last_month": "since last month",
+  "customers": "customers",
+  "avg_revenue": "avg. revenue",
+  "revenue": "Revenue",
+  "facebook_ads": "Facebook Ads",
+  "google_ads": "Google Ads",
+  "ads_performance_tooltip": "See which ads perform better",
+  "sales_by_age": "Sales by age",
+  "sales_by_country": "Sales by Country",
+  "top_selling": "Top Selling Products"
+}

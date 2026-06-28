@@ -38,7 +38,11 @@ import logoAsana from "assets/images/small-logos/logo-asana.svg";
 // Material Dashboard 3 PRO React components
 import { useMaterialUIController } from "context";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function Accounts() {
+  const { t } = useTranslation("page_settings");
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
@@ -56,10 +60,10 @@ function Accounts() {
     <Card id="accounts">
       <MDBox p={3} lineHeight={1}>
         <MDBox mb={1}>
-          <MDTypography variant="h5">Accounts</MDTypography>
+          <MDTypography variant="h5">{t("acc_title")}</MDTypography>
         </MDBox>
         <MDTypography variant="button" color="text">
-          Here you can setup and manage your integration settings.
+          {t("acc_desc")}
         </MDTypography>
       </MDBox>
       <MDBox pt={2} pb={3} px={3}>
@@ -73,11 +77,11 @@ function Accounts() {
             <MDAvatar src={logoSlack} alt="Slack logo" variant="rounded" />
             <MDBox ml={2}>
               <MDTypography variant="h5" fontWeight="medium">
-                Slack
+                {t("acc_slack")}
               </MDTypography>
               <MDBox display="flex" alignItems="flex-end">
                 <MDTypography variant="button" color="text">
-                  Show less
+                  {t("acc_show_less")}
                 </MDTypography>
                 <MDTypography variant="button" color="text" sx={{ lineHeight: 0 }}>
                   <Icon fontSize="small">expand_less</Icon>
@@ -94,7 +98,7 @@ function Accounts() {
           >
             <MDBox lineHeight={0} mx={2}>
               <MDTypography variant="button" color="text">
-                {slack2FA ? "Enabled" : "Disabled"}
+                {slack2FA ? t("acc_enabled") : t("acc_disabled")}
               </MDTypography>
             </MDBox>
             <MDBox mr={1}>
@@ -104,9 +108,7 @@ function Accounts() {
         </MDBox>
         <MDBox ml={2} pl={6} pt={2} lineHeight={1}>
           <MDTypography variant="button" color="text">
-            You haven&apos;t added your Slack yet or you aren&apos;t authorized. Please add our
-            Slack Bot to your account by clicking on here. When you&apos;ve added the bot, send your
-            verification code that you have received.
+            {t("acc_slack_desc")}
           </MDTypography>
           <MDBox
             bgColor={darkMode ? "grey-900" : "grey-100"}
@@ -121,7 +123,7 @@ function Accounts() {
             pr={1}
           >
             <MDTypography variant="button" fontWeight="medium" color="text">
-              Verification Code
+              {t("acc_verification")}
             </MDTypography>
             <MDBox width={{ xs: "100%", sm: "25%", md: "15%" }} mt={{ xs: 1, sm: 0 }}>
               <Tooltip title="Copy" placement="top">
@@ -142,7 +144,7 @@ function Accounts() {
             pr={1}
           >
             <MDTypography variant="button" fontWeight="medium" color="text">
-              Connected account
+              {t("acc_connected")}
             </MDTypography>
             <MDBox
               display="flex"
@@ -155,7 +157,7 @@ function Accounts() {
                 </MDTypography>
               </MDBox>
               <MDButton variant="gradient" color="dark" size="small">
-                delete
+                {t("acc_delete")}
               </MDButton>
             </MDBox>
           </MDBox>
@@ -171,10 +173,10 @@ function Accounts() {
             <MDAvatar src={logoSpotify} alt="Slack logo" variant="rounded" />
             <MDBox ml={2} lineHeight={0}>
               <MDTypography variant="h5" fontWeight="medium">
-                Spotify
+                {t("acc_spotify")}
               </MDTypography>
               <MDTypography variant="button" color="text">
-                Music
+                {t("acc_music")}
               </MDTypography>
             </MDBox>
           </MDBox>
@@ -187,7 +189,7 @@ function Accounts() {
           >
             <MDBox lineHeight={0} mx={2}>
               <MDTypography variant="button" color="text">
-                {spotify2FA ? "Enabled" : "Disabled"}
+                {spotify2FA ? t("acc_enabled") : t("acc_disabled")}
               </MDTypography>
             </MDBox>
             <MDBox mr={1}>
@@ -206,10 +208,10 @@ function Accounts() {
             <MDAvatar src={logoAtlassian} alt="Slack logo" variant="rounded" />
             <MDBox ml={2} lineHeight={0}>
               <MDTypography variant="h5" fontWeight="medium">
-                Atlassian
+                {t("acc_atlassian")}
               </MDTypography>
               <MDTypography variant="button" color="text">
-                Payment vendor
+                {t("acc_payment")}
               </MDTypography>
             </MDBox>
           </MDBox>
@@ -222,7 +224,7 @@ function Accounts() {
           >
             <MDBox lineHeight={0} mx={2}>
               <MDTypography variant="button" color="text">
-                {atlassian2FA ? "Enabled" : "Disabled"}
+                {atlassian2FA ? t("acc_enabled") : t("acc_disabled")}
               </MDTypography>
             </MDBox>
             <MDBox mr={1}>
@@ -241,10 +243,10 @@ function Accounts() {
             <MDAvatar src={logoAsana} alt="Slack logo" variant="rounded" />
             <MDBox ml={2} lineHeight={0}>
               <MDTypography variant="h5" fontWeight="medium">
-                Asana
+                {t("acc_asana")}
               </MDTypography>
               <MDTypography variant="button" color="text">
-                Organize your team
+                {t("acc_organize")}
               </MDTypography>
             </MDBox>
           </MDBox>
@@ -257,7 +259,7 @@ function Accounts() {
           >
             <MDBox lineHeight={0} mx={2}>
               <MDTypography variant="button" color="text">
-                {asana2FA ? "Enabled" : "Disabled"}
+                {asana2FA ? t("acc_enabled") : t("acc_disabled")}
               </MDTypography>
             </MDBox>
             <MDBox mr={1}>

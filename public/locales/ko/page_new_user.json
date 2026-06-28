@@ -1,0 +1,32 @@
+{
+  "step_1": "사용자 정보",
+  "step_2": "주소",
+  "step_3": "소셜",
+  "step_4": "프로필",
+  "btn_back": "이전",
+  "btn_next": "다음",
+  "btn_send": "완료",
+  "form": {
+    "firstName": "이름",
+    "lastName": "성",
+    "company": "회사",
+    "email": "이메일 주소",
+    "password": "비밀번호",
+    "repeatPassword": "비밀번호 확인",
+    "address1": "주소 1",
+    "address2": "주소 2",
+    "city": "도시",
+    "state": "주/도",
+    "zip": "우편번호",
+    "twitter": "트위터 핸들",
+    "facebook": "페이스북 계정",
+    "instagram": "인스타그램 계정",
+    "publicEmail": "공개 이메일",
+    "bio": "자기소개",
+    "about_me": "내 정보",
+    "mandatory": "필수 정보",
+    "address_title": "주소",
+    "socials_title": "소셜",
+    "profile_title": "프로필"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "profile_info_title": "프로필 정보",
+  "profile_info_desc": "안녕하세요, 저는 알렉 톰슨입니다. 결정에 관하여: 결정할 수 없다면 정답은 '아니오'입니다. 만약 동등하게 어려운 두 가지 길이 있다면 단기적으로 더 고통스러운 길을 선택하십시오(고통 회피는 평등이라는 환상을 만들어냅니다).",
+  "conversations": "대화",
+  "projects": "프로젝트",
+  "architects_design_houses": "건축가가 집을 설계합니다",
+  "project_1_label": "프로젝트 #1",
+  "project_1_title": "스칸디나비아풍",
+  "project_1_desc": "음악은 누구나 자신만의 확고한 의견을 가지고 있는 분야입니다.",
+  "project_2_label": "프로젝트 #2",
+  "project_2_title": "모던",
+  "project_2_desc": "우버가 내부적으로 엄청난 경영 혼란을 겪고 있는 가운데.",
+  "project_3_label": "프로젝트 #3",
+  "project_3_title": "미니멀리스트",
+  "project_3_desc": "사람마다 취향이 다르며, 다양한 종류의 음악이 존재합니다.",
+  "project_4_label": "프로젝트 #4",
+  "project_4_title": "고딕",
+  "project_4_desc": "왜 누군가는 분홍색보다 파란색을 선택할까요? 분명 분홍색이 더 나은 색상입니다.",
+  "view_project": "프로젝트 보기"
+}

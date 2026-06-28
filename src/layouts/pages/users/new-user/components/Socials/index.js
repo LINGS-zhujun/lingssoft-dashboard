@@ -26,7 +26,11 @@ import MDTypography from "components/MDTypography";
 // NewUser page components
 import FormField from "layouts/pages/users/new-user/components/FormField";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function Socials({ formData }) {
+  const { t } = useTranslation("page_new_user");
   const { formField, values, errors, touched } = formData;
   const { twitter, facebook, instagram } = formField;
   const { twitter: twitterV, facebook: facebookV, instagram: instagramV } = values;
@@ -34,14 +38,14 @@ function Socials({ formData }) {
   return (
     <MDBox>
       <MDTypography variant="h5" fontWeight="bold">
-        Socials
+        {t("form.socials_title")}
       </MDTypography>
       <MDBox mt={1.625}>
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <FormField
               type={twitter.type}
-              label={twitter.label}
+              label={t(`form.${twitter.name}`)}
               name={twitter.name}
               value={twitterV}
               placeholder={twitter.placeholder}
@@ -52,7 +56,7 @@ function Socials({ formData }) {
           <Grid item xs={12}>
             <FormField
               type={facebook.type}
-              label={facebook.label}
+              label={t(`form.${facebook.name}`)}
               name={facebook.name}
               value={facebookV}
               placeholder={facebook.placeholder}
@@ -61,7 +65,7 @@ function Socials({ formData }) {
           <Grid item xs={12}>
             <FormField
               type={instagram.type}
-              label={instagram.label}
+              label={t(`form.${instagram.name}`)}
               name={instagram.name}
               value={instagramV}
               placeholder={instagram.placeholder}

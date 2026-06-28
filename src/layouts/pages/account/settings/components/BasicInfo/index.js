@@ -22,6 +22,9 @@ import Autocomplete from "@mui/material/Autocomplete";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Settings page components
 import FormField from "layouts/pages/account/components/FormField";
 
@@ -29,18 +32,19 @@ import FormField from "layouts/pages/account/components/FormField";
 import selectData from "layouts/pages/account/settings/components/BasicInfo/data/selectData";
 
 function BasicInfo() {
+  const { t } = useTranslation("page_settings");
   return (
     <Card id="basic-info" sx={{ overflow: "visible" }}>
       <MDBox p={3}>
-        <MDTypography variant="h5">Basic Info</MDTypography>
+        <MDTypography variant="h5">{t("basic_info_title")}</MDTypography>
       </MDBox>
       <MDBox component="form" pb={3} px={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <FormField label="First Name" placeholder="Alec" />
+            <FormField label={t("basic_info_first_name")} placeholder="Alec" />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <FormField label="Last Name" placeholder="Thompson" />
+            <FormField label={t("basic_info_last_name")} placeholder="Thompson" />
           </Grid>
           <Grid item xs={12}>
             <Grid container spacing={3}>
@@ -49,7 +53,7 @@ function BasicInfo() {
                   defaultValue="Male"
                   options={selectData.gender}
                   renderInput={(params) => (
-                    <FormField {...params} label="I'm" InputLabelProps={{ shrink: true }} />
+                    <FormField {...params} label={t("basic_info_im")} InputLabelProps={{ shrink: true }} />
                   )}
                 />
               </Grid>
@@ -62,7 +66,7 @@ function BasicInfo() {
                       renderInput={(params) => (
                         <FormField
                           {...params}
-                          label="Birth Date"
+                          label={t("basic_info_birth_date")}
                           InputLabelProps={{ shrink: true }}
                         />
                       )}
@@ -92,30 +96,30 @@ function BasicInfo() {
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField
-              label="Email"
+              label={t("basic_info_email")}
               placeholder="example@email.com"
               inputProps={{ type: "email" }}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField
-              label="confirmation email"
+              label={t("basic_info_confirm_email")}
               placeholder="example@email.com"
               inputProps={{ type: "email" }}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <FormField label="your location" placeholder="Sydney, A" />
+            <FormField label={t("basic_info_location")} placeholder="Sydney, A" />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField
-              label="Phone Number"
+              label={t("basic_info_phone")}
               placeholder="+40 735 631 620"
               inputProps={{ type: "number" }}
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <FormField label="Language" placeholder="English" />
+            <FormField label={t("basic_info_language")} placeholder="English" />
           </Grid>
           <Grid item xs={12} md={6}>
             <Autocomplete

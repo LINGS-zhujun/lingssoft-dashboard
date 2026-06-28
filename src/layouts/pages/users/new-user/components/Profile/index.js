@@ -26,7 +26,11 @@ import MDTypography from "components/MDTypography";
 // NewUser page components
 import FormField from "layouts/pages/users/new-user/components/FormField";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function Profile({ formData }) {
+  const { t } = useTranslation("page_new_user");
   const { formField, values } = formData;
   const { publicEmail, bio } = formField;
   const { publicEmail: publicEmailV, bio: bioV } = values;
@@ -34,14 +38,14 @@ function Profile({ formData }) {
   return (
     <MDBox>
       <MDTypography variant="h5" fontWeight="bold">
-        Profile
+        {t("form.profile_title")}
       </MDTypography>
       <MDBox mt={1.625}>
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <FormField
               type={publicEmail.type}
-              label={publicEmail.label}
+              label={t(`form.${publicEmail.name}`)}
               name={publicEmail.name}
               value={publicEmailV}
               placeholder={publicEmail.placeholder}
@@ -50,7 +54,7 @@ function Profile({ formData }) {
           <Grid item xs={12}>
             <FormField
               type={bio.type}
-              label={bio.label}
+              label={t(`form.${bio.name}`)}
               name={bio.name}
               value={bioV}
               placeholder={bio.placeholder}

@@ -22,6 +22,9 @@ import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Authentication layout components
 import CoverLayout from "layouts/authentication/components/CoverLayout";
 
@@ -29,6 +32,7 @@ import CoverLayout from "layouts/authentication/components/CoverLayout";
 import bgImage from "assets/images/bg-reset-cover.jpeg";
 
 function Cover() {
+  const { t } = useTranslation("page_reset_cover");
   return (
     <CoverLayout coverHeight="50vh" image={bgImage}>
       <Card>
@@ -43,10 +47,10 @@ function Cover() {
           textAlign="center"
         >
           <MDTypography variant="h3" fontWeight="medium" color="white" mt={1}>
-            Reset Password
+            {t("reset_pwd_title")}
           </MDTypography>
           <MDTypography display="block" variant="button" color="white" my={1}>
-            You will receive an e-mail in maximum 60 seconds
+            {t("reset_pwd_desc")}
           </MDTypography>
         </MDBox>
         <MDBox pt={4} pb={3} px={3}>
@@ -54,14 +58,14 @@ function Cover() {
             <MDBox mb={4}>
               <MDInput
                 type="email"
-                label="Email"
+                label={t("email")}
                 variant="standard"
                 fullWidth
               />
             </MDBox>
             <MDBox mt={6} mb={1}>
               <MDButton variant="gradient" color="info" fullWidth>
-                reset
+                {t("reset_btn")}
               </MDButton>
             </MDBox>
           </MDBox>

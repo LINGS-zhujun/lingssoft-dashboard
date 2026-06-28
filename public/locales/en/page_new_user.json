@@ -1,0 +1,32 @@
+{
+  "step_1": "User Info",
+  "step_2": "Address",
+  "step_3": "Social",
+  "step_4": "Profile",
+  "btn_back": "back",
+  "btn_next": "next",
+  "btn_send": "send",
+  "form": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "company": "Company",
+    "email": "Email Address",
+    "password": "Password",
+    "repeatPassword": "Repeat Password",
+    "address1": "Address 1",
+    "address2": "Address 2",
+    "city": "City",
+    "state": "State",
+    "zip": "Zip",
+    "twitter": "Twitter Handle",
+    "facebook": "Facebook Account",
+    "instagram": "Instagram Account",
+    "publicEmail": "Public Email",
+    "bio": "Bio",
+    "about_me": "About me",
+    "mandatory": "Mandatory informations",
+    "address_title": "Address",
+    "socials_title": "Socials",
+    "profile_title": "Profile"
+  }
+}

@@ -16,6 +16,9 @@ Coded by www.creative-tim.com
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -37,6 +40,8 @@ import pageRoutes from "page.routes";
 import bgImage from "assets/images/bg-pricing.jpg";
 
 function Header({ tabValue, tabHandler, children }) {
+  const { t } = useTranslation("page_pricing");
+
   return (
     <>
       <DefaultNavbar
@@ -73,12 +78,12 @@ function Header({ tabValue, tabHandler, children }) {
           <Grid item xs={11} lg={5}>
             <MDBox mb={1}>
               <MDTypography variant="h2" color="white" fontWeight="bold">
-                Pick the best plan for you
+                {t("title")}
               </MDTypography>
             </MDBox>
             <MDBox mb={2}>
               <MDTypography variant="body2" color="white" fontWeight="light">
-                You have Free Unlimited Updates and Premium Support on each package.
+                {t("subtitle")}
               </MDTypography>
             </MDBox>
           </Grid>
@@ -94,7 +99,7 @@ function Header({ tabValue, tabHandler, children }) {
                     id="monthly"
                     label={
                       <MDBox py={0.5} px={2} color="inherit">
-                        Monthly
+                        {t("monthly")}
                       </MDBox>
                     }
                   />
@@ -102,7 +107,7 @@ function Header({ tabValue, tabHandler, children }) {
                     id="annual"
                     label={
                       <MDBox py={0.5} px={2} color="inherit">
-                        Annual
+                        {t("annual")}
                       </MDBox>
                     }
                   />

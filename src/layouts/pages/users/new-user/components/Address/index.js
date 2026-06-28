@@ -30,7 +30,11 @@ import MDInput from "components/MDInput";
 import FormField from "layouts/pages/users/new-user/components/FormField";
 import { Field, ErrorMessage } from "formik";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function Address({ formData }) {
+  const { t } = useTranslation("page_new_user");
   const { formField, values, errors, touched, setValues } = formData;
   const { address1, address2, city, zip } = formField;
   const { address1: address1V, address2: address2V, city: cityV, zip: zipV } = values;
@@ -44,14 +48,14 @@ function Address({ formData }) {
   return (
     <MDBox>
       <MDTypography variant="h5" fontWeight="bold">
-        Address
+        {t("form.address_title")}
       </MDTypography>
       <MDBox mt={1.625}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <FormField
               type={address1.type}
-              label={address1.label}
+              label={t(`form.${address1.name}`)}
               name={address1.name}
               value={address1V}
               placeholder={address1.placeholder}
@@ -63,7 +67,7 @@ function Address({ formData }) {
             <MDBox mt={-1.625}>
               <FormField
                 type={address2.type}
-                label={address2.label}
+                label={t(`form.${address2.name}`)}
                 name={address2.name}
                 value={address2V}
                 placeholder={address2.placeholder}
@@ -75,7 +79,7 @@ function Address({ formData }) {
           <Grid item xs={12} sm={6}>
             <FormField
               type={city.type}
-              label={city.label}
+              label={t(`form.${city.name}`)}
               name={city.name}
               value={cityV}
               placeholder={city.placeholder}
@@ -92,7 +96,7 @@ function Address({ formData }) {
               value={stateValue}
               renderInput={(params) => {
                 return (
-                  <Field {...params} as={MDInput} variant="standard" label="State" fullWidth />
+                  <Field {...params} as={MDInput} variant="standard" label={t("form.state")} fullWidth />
                 );
               }}
             />
@@ -100,7 +104,7 @@ function Address({ formData }) {
           <Grid item xs={6} sm={3}>
             <FormField
               type={zip.type}
-              label={zip.label}
+              label={t(`form.${zip.name}`)}
               name={zip.name}
               value={zipV}
               placeholder={zip.placeholder}

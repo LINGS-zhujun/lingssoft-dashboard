@@ -27,16 +27,19 @@ import MDTypography from "components/MDTypography";
 // Setting pages components
 import TableCell from "layouts/pages/account/settings/components/TableCell";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function Notifications() {
+  const { t } = useTranslation("page_settings");
   return (
     <Card id="notifications">
       <MDBox p={3} lineHeight={1}>
         <MDBox mb={1}>
-          <MDTypography variant="h5">Notifications</MDTypography>
+          <MDTypography variant="h5">{t("notif_title")}</MDTypography>
         </MDBox>
         <MDTypography variant="button" color="text">
-          Choose how you receive notifications. These notification settings
-          apply to the things you’re watching.
+          {t("notif_desc")}
         </MDTypography>
       </MDBox>
       <MDBox pb={3} px={3}>
@@ -45,16 +48,16 @@ function Notifications() {
             <MDBox component="thead">
               <TableRow>
                 <TableCell width="100%" padding={[1.5, 3, 1.5, 0.5]} noBorder>
-                  Activity
+                  {t("notif_activity")}
                 </TableCell>
                 <TableCell align="center" padding={[1.5, 6, 1.5, 6]} noBorder>
-                  Email
+                  {t("notif_email")}
                 </TableCell>
                 <TableCell align="center" padding={[1.5, 6, 1.5, 6]} noBorder>
-                  Push
+                  {t("notif_push")}
                 </TableCell>
                 <TableCell align="center" padding={[1.5, 6, 1.5, 6]} noBorder>
-                  SMS
+                  {t("notif_sms")}
                 </TableCell>
               </TableRow>
             </MDBox>
@@ -67,14 +70,14 @@ function Notifications() {
                       variant="button"
                       fontWeight="regular"
                     >
-                      Mentions
+                      {t("notif_mentions")}
                     </MDTypography>
                     <MDTypography
                       variant="caption"
                       color="text"
                       fontWeight="regular"
                     >
-                      Notify when another user mentions you in a comment
+                      {t("notif_mentions_desc")}
                     </MDTypography>
                   </MDBox>
                 </TableCell>
@@ -96,14 +99,14 @@ function Notifications() {
                       variant="button"
                       fontWeight="regular"
                     >
-                      Comments
+                      {t("notif_comments")}
                     </MDTypography>
                     <MDTypography
                       variant="caption"
                       color="text"
                       fontWeight="regular"
                     >
-                      Notify when another user comments your item.
+                      {t("notif_comments_desc")}
                     </MDTypography>
                   </MDBox>
                 </TableCell>
@@ -125,14 +128,14 @@ function Notifications() {
                       variant="button"
                       fontWeight="regular"
                     >
-                      Follows
+                      {t("notif_follows")}
                     </MDTypography>
                     <MDTypography
                       variant="caption"
                       color="text"
                       fontWeight="regular"
                     >
-                      Notify when another user follows you.
+                      {t("notif_follows_desc")}
                     </MDTypography>
                   </MDBox>
                 </TableCell>
@@ -149,7 +152,7 @@ function Notifications() {
               <TableRow>
                 <TableCell padding={[1, 1, 1, 0.5]} noBorder>
                   <MDTypography display="block" variant="button" color="text">
-                    Log in from a new device
+                    {t("notif_login")}
                   </MDTypography>
                 </TableCell>
                 <TableCell align="center" padding={[1, 1, 1, 0.5]} noBorder>
