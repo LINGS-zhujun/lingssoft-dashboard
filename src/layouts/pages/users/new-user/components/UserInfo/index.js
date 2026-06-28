@@ -26,7 +26,11 @@ import MDTypography from "components/MDTypography";
 // NewUser page components
 import FormField from "layouts/pages/users/new-user/components/FormField";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function UserInfo({ formData }) {
+  const { t } = useTranslation("page_new_user");
   const { formField, values, errors, touched } = formData;
   const { firstName, lastName, company, email, password, repeatPassword } = formField;
   const {
@@ -41,9 +45,9 @@ function UserInfo({ formData }) {
   return (
     <MDBox>
       <MDBox lineHeight={0}>
-        <MDTypography variant="h5">About me</MDTypography>
+        <MDTypography variant="h5">{t("form.about_me")}</MDTypography>
         <MDTypography variant="button" color="text">
-          Mandatory informations
+          {t("form.mandatory")}
         </MDTypography>
       </MDBox>
       <MDBox mt={1.625}>
@@ -51,7 +55,7 @@ function UserInfo({ formData }) {
           <Grid item xs={12} sm={6}>
             <FormField
               type={firstName.type}
-              label={firstName.label}
+              label={t(`form.${firstName.name}`)}
               name={firstName.name}
               value={firstNameV}
               placeholder={firstName.placeholder}
@@ -62,7 +66,7 @@ function UserInfo({ formData }) {
           <Grid item xs={12} sm={6}>
             <FormField
               type={lastName.type}
-              label={lastName.label}
+              label={t(`form.${lastName.name}`)}
               name={lastName.name}
               value={lastNameV}
               placeholder={lastName.placeholder}
@@ -75,7 +79,7 @@ function UserInfo({ formData }) {
           <Grid item xs={12} sm={6}>
             <FormField
               type={company.type}
-              label={company.label}
+              label={t(`form.${company.name}`)}
               name={company.name}
               value={companyV}
               placeholder={company.placeholder}
@@ -84,7 +88,7 @@ function UserInfo({ formData }) {
           <Grid item xs={12} sm={6}>
             <FormField
               type={email.type}
-              label={email.label}
+              label={t(`form.${email.name}`)}
               name={email.name}
               value={emailV}
               placeholder={email.placeholder}
@@ -97,7 +101,7 @@ function UserInfo({ formData }) {
           <Grid item xs={12} sm={6}>
             <FormField
               type={password.type}
-              label={password.label}
+              label={t(`form.${password.name}`)}
               name={password.name}
               value={passwordV}
               placeholder={password.placeholder}
@@ -109,7 +113,7 @@ function UserInfo({ formData }) {
           <Grid item xs={12} sm={6}>
             <FormField
               type={repeatPassword.type}
-              label={repeatPassword.label}
+              label={t(`form.${repeatPassword.name}`)}
               name={repeatPassword.name}
               value={repeatPasswordV}
               placeholder={repeatPassword.placeholder}

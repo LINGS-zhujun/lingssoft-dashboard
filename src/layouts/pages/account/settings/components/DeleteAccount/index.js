@@ -19,9 +19,14 @@ import Card from "@mui/material/Card";
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
+import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function DeleteAccount() {
+  const { t } = useTranslation("page_settings");
   return (
     <Card id="delete-account">
       <MDBox
@@ -33,19 +38,19 @@ function DeleteAccount() {
       >
         <MDBox p={3} lineHeight={1}>
           <MDBox mb={1}>
-            <MDTypography variant="h5">Delete Account</MDTypography>
+            <MDTypography variant="h5">{t("del_title")}</MDTypography>
           </MDBox>
           <MDTypography variant="button" color="text">
-            Once you delete your account, there is no going back. Please be certain.
+            {t("del_desc")}
           </MDTypography>
         </MDBox>
         <MDBox display="flex" flexDirection={{ xs: "column", sm: "row" }}>
           <MDButton variant="outlined" color="secondary">
-            deactivate
+            {t("del_deactivate")}
           </MDButton>
           <MDBox ml={{ xs: 0, sm: 1 }} mt={{ xs: 1, sm: 0 }}>
             <MDButton variant="gradient" color="error" sx={{ height: "100%" }}>
-              delete account
+              {t("del_delete")}
             </MDButton>
           </MDBox>
         </MDBox>

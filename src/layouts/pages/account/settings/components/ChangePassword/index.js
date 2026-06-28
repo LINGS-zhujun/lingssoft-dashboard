@@ -23,12 +23,16 @@ import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 import MDInput from "components/MDInput";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 function ChangePassword() {
+  const { t } = useTranslation("page_settings");
   const passwordRequirements = [
-    "One special characters",
-    "Min 6 characters",
-    "One number (2 are recommended)",
-    "Change it often",
+    t("pwd_req_1"),
+    t("pwd_req_2"),
+    t("pwd_req_3"),
+    t("pwd_req_4"),
   ];
 
   const renderPasswordRequirements = passwordRequirements.map((item, key) => {
@@ -46,38 +50,38 @@ function ChangePassword() {
   return (
     <Card id="change-password">
       <MDBox p={3}>
-        <MDTypography variant="h5">Change Password</MDTypography>
+        <MDTypography variant="h5">{t("change_password_title")}</MDTypography>
       </MDBox>
       <MDBox component="form" pb={3} px={3}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <MDInput
               fullWidth
-              label="Current Password"
+              label={t("change_password_current")}
               inputProps={{ type: "password", autoComplete: "" }}
             />
           </Grid>
           <Grid item xs={12}>
             <MDInput
               fullWidth
-              label="New Password"
+              label={t("change_password_new")}
               inputProps={{ type: "password", autoComplete: "" }}
             />
           </Grid>
           <Grid item xs={12}>
             <MDInput
               fullWidth
-              label="Confirm New Password"
+              label={t("change_password_confirm")}
               inputProps={{ type: "password", autoComplete: "" }}
             />
           </Grid>
         </Grid>
         <MDBox mt={6} mb={1}>
-          <MDTypography variant="h5">Password requirements</MDTypography>
+          <MDTypography variant="h5">{t("change_password_req_title")}</MDTypography>
         </MDBox>
         <MDBox mb={1}>
           <MDTypography variant="body2" color="text">
-            Please follow this guide for a strong password
+            {t("change_password_req_desc")}
           </MDTypography>
         </MDBox>
         <MDBox display="flex" justifyContent="space-between" alignItems="flex-end" flexWrap="wrap">
@@ -86,7 +90,7 @@ function ChangePassword() {
           </MDBox>
           <MDBox ml="auto">
             <MDButton variant="gradient" color="dark" size="small">
-              update password
+              {t("change_password_btn")}
             </MDButton>
           </MDBox>
         </MDBox>

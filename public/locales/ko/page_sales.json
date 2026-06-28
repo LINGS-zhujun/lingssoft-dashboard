@@ -1,0 +1,13 @@
+{
+  "sales": "판매량",
+  "since_last_month": "지난달 대비",
+  "customers": "고객",
+  "avg_revenue": "평균 수익",
+  "revenue": "수익",
+  "facebook_ads": "페이스북 광고",
+  "google_ads": "구글 광고",
+  "ads_performance_tooltip": "어떤 광고가 성과가 좋은지 확인하세요",
+  "sales_by_age": "연령별 판매",
+  "sales_by_country": "국가별 판매",
+  "top_selling": "최고 판매 상품"
+}

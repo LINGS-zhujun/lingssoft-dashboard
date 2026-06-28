@@ -36,7 +36,7 @@ import CoverLayout from "layouts/authentication/components/CoverLayout";
 import bgImage from "assets/images/bg-sign-in-cover.jpeg";
 
 function Cover() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("page_sign_in_cover");
   const [rememberMe, setRememberMe] = useState(true);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
@@ -55,10 +55,10 @@ function Cover() {
           textAlign="center"
         >
           <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-            {t("auth.sign_in")}
+            {t("sign_in")}
           </MDTypography>
           <MDTypography display="block" variant="button" color="white" my={1}>
-            {t("auth.sign_in_desc")}
+            {t("sign_in_desc")}
           </MDTypography>
         </MDBox>
         <MDBox pt={4} pb={3} px={3}>
@@ -66,7 +66,7 @@ function Cover() {
             <MDBox mb={2}>
               <MDInput
                 type="email"
-                label={t("auth.email")}
+                label={t("email")}
                 variant="standard"
                 fullWidth
                 placeholder="john@example.com"
@@ -76,7 +76,7 @@ function Cover() {
             <MDBox mb={2}>
               <MDInput
                 type="password"
-                label={t("auth.password")}
+                label={t("password")}
                 variant="standard"
                 fullWidth
                 placeholder="************"
@@ -92,17 +92,17 @@ function Cover() {
                 onClick={handleSetRememberMe}
                 sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
               >
-                &nbsp;&nbsp;{t("auth.remember_me")}
+                &nbsp;&nbsp;{t("remember_me")}
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
               <MDButton variant="gradient" color="info" fullWidth>
-                {t("auth.sign_in_button")}
+                {t("sign_in_button")}
               </MDButton>
             </MDBox>
             <MDBox mt={3} mb={1} textAlign="center">
               <MDTypography variant="button" color="text">
-                {t("auth.no_account")}{" "}
+                {t("no_account")}{" "}
                 <MDTypography
                   component={Link}
                   to="/authentication/sign-up/cover"
@@ -111,7 +111,7 @@ function Cover() {
                   fontWeight="medium"
                   textGradient
                 >
-                  {t("auth.sign_up")}
+                  {t("sign_up")}
                 </MDTypography>
               </MDTypography>
             </MDBox>

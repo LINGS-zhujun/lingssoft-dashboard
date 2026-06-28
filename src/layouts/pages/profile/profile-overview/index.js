@@ -22,6 +22,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -52,6 +55,8 @@ import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
 function Overview() {
+  const { t } = useTranslation("page_profile_overview");
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -65,8 +70,8 @@ function Overview() {
             <Grid item xs={12} md={6} xl={4} sx={{ display: "flex" }}>
               <Divider orientation="vertical" sx={{ ml: -2, mr: 1 }} />
               <ProfileInfoCard
-                title="profile information"
-                description="Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+                title={t("profile_info_title")}
+                description={t("profile_info_desc")}
                 info={{
                   fullName: "Alec M. Thompson",
                   mobile: "(44) 123 1234 123",
@@ -96,17 +101,17 @@ function Overview() {
               <Divider orientation="vertical" sx={{ mx: 0 }} />
             </Grid>
             <Grid item xs={12} xl={4}>
-              <ProfilesList title="conversations" profiles={profilesListData} shadow={false} />
+              <ProfilesList title={t("conversations")} profiles={profilesListData} shadow={false} />
             </Grid>
           </Grid>
         </MDBox>
         <MDBox pt={2} px={2} lineHeight={1.25}>
           <MDTypography variant="h6" fontWeight="medium">
-            Projects
+            {t("projects")}
           </MDTypography>
           <MDBox mb={1}>
             <MDTypography variant="button" color="text">
-              Architects design houses
+              {t("architects_design_houses")}
             </MDTypography>
           </MDBox>
         </MDBox>
@@ -115,14 +120,14 @@ function Overview() {
             <Grid item xs={12} md={6} xl={3}>
               <DefaultProjectCard
                 image={homeDecor1}
-                label="project #2"
-                title="modern"
-                description="As Uber works through a huge amount of internal management turmoil."
+                label={t("project_2_label")}
+                title={t("project_2_title")}
+                description={t("project_2_desc")}
                 action={{
                   type: "internal",
                   route: "/pages/profile/profile-overview",
                   color: "info",
-                  label: "view project",
+                  label: t("view_project"),
                 }}
                 authors={[
                   { image: team1, name: "Elena Morison" },
@@ -135,14 +140,14 @@ function Overview() {
             <Grid item xs={12} md={6} xl={3}>
               <DefaultProjectCard
                 image={homeDecor2}
-                label="project #1"
-                title="scandinavian"
-                description="Music is something that everyone has their own specific opinion about."
+                label={t("project_1_label")}
+                title={t("project_1_title")}
+                description={t("project_1_desc")}
                 action={{
                   type: "internal",
                   route: "/pages/profile/profile-overview",
                   color: "info",
-                  label: "view project",
+                  label: t("view_project"),
                 }}
                 authors={[
                   { image: team3, name: "Nick Daniel" },
@@ -155,14 +160,14 @@ function Overview() {
             <Grid item xs={12} md={6} xl={3}>
               <DefaultProjectCard
                 image={homeDecor3}
-                label="project #3"
-                title="minimalist"
-                description="Different people have different taste, and various types of music."
+                label={t("project_3_label")}
+                title={t("project_3_title")}
+                description={t("project_3_desc")}
                 action={{
                   type: "internal",
                   route: "/pages/profile/profile-overview",
                   color: "info",
-                  label: "view project",
+                  label: t("view_project"),
                 }}
                 authors={[
                   { image: team4, name: "Peterson" },
@@ -175,14 +180,14 @@ function Overview() {
             <Grid item xs={12} md={6} xl={3}>
               <DefaultProjectCard
                 image={homeDecor4}
-                label="project #4"
-                title="gothic"
-                description="Why would anyone pick blue over pink? Pink is obviously a better color."
+                label={t("project_4_label")}
+                title={t("project_4_title")}
+                description={t("project_4_desc")}
                 action={{
                   type: "internal",
                   route: "/pages/profile/profile-overview",
                   color: "info",
-                  label: "view project",
+                  label: t("view_project"),
                 }}
                 authors={[
                   { image: team4, name: "Peterson" },

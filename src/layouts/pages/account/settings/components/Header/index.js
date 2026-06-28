@@ -25,10 +25,14 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Images
 import burceMars from "assets/images/bruce-mars.jpg";
 
 function Header() {
+  const { t } = useTranslation("page_settings");
   const [visible, setVisible] = useState(true);
 
   const handleSetVisible = () => setVisible(!visible);
@@ -46,7 +50,7 @@ function Header() {
                 Alex Thompson
               </MDTypography>
               <MDTypography variant="button" color="text" fontWeight="medium">
-                CEO / Co-Founder
+                {t("header_role")}
               </MDTypography>
             </MDBox>
           </Grid>
@@ -58,7 +62,7 @@ function Header() {
               lineHeight={1}
             >
               <MDTypography variant="caption" fontWeight="regular">
-                Switch to {visible ? "invisible" : "visible"}
+                {visible ? t("header_switch_invisible") : t("header_switch_visible")}
               </MDTypography>
               <MDBox ml={1}>
                 <Switch checked={visible} onChange={handleSetVisible} />

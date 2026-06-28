@@ -42,7 +42,7 @@ import BasicLayout from "layouts/authentication/components/BasicLayout";
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
 function Basic() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("page_sign_in_basic");
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
@@ -61,7 +61,7 @@ function Basic() {
           textAlign="center"
         >
           <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-            {t("auth.sign_in")}
+            {t("sign_in")}
           </MDTypography>
           <Grid
             container
@@ -104,10 +104,10 @@ function Basic() {
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form">
             <MDBox mb={2}>
-              <MDInput type="email" label={t("auth.email")} fullWidth />
+              <MDInput type="email" label={t("email")} fullWidth />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="password" label={t("auth.password")} fullWidth />
+              <MDInput type="password" label={t("password")} fullWidth />
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
               <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -118,17 +118,17 @@ function Basic() {
                 onClick={handleSetRememberMe}
                 sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
               >
-                &nbsp;&nbsp;{t("auth.remember_me")}
+                &nbsp;&nbsp;{t("remember_me")}
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
               <MDButton variant="gradient" color="info" fullWidth>
-                {t("auth.sign_in_button")}
+                {t("sign_in_button")}
               </MDButton>
             </MDBox>
             <MDBox mt={3} mb={1} textAlign="center">
               <MDTypography variant="button" color="text">
-                {t("auth.no_account")}{" "}
+                {t("no_account")}{" "}
                 <MDTypography
                   component={Link}
                   to="/authentication/sign-up/cover"
@@ -137,7 +137,7 @@ function Basic() {
                   fontWeight="medium"
                   textGradient
                 >
-                  {t("auth.sign_up")}
+                  {t("sign_up")}
                 </MDTypography>
               </MDTypography>
             </MDBox>

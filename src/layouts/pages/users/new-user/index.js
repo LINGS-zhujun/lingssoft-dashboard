@@ -45,8 +45,11 @@ import validations from "layouts/pages/users/new-user/schemas/validations";
 import form from "layouts/pages/users/new-user/schemas/form";
 import initialValues from "layouts/pages/users/new-user/schemas/initialValues";
 
-function getSteps() {
-  return ["User Info", "Address", "Social", "Profile"];
+// react-i18next
+import { useTranslation } from "react-i18next";
+
+function getSteps(t) {
+  return [t("step_1"), t("step_2"), t("step_3"), t("step_4")];
 }
 
 function getStepContent(stepIndex, formData) {
@@ -65,8 +68,9 @@ function getStepContent(stepIndex, formData) {
 }
 
 function NewUser() {
+  const { t } = useTranslation("page_new_user");
   const [activeStep, setActiveStep] = useState(0);
-  const steps = getSteps();
+  const steps = getSteps(t);
   const { formId, formField } = form;
   const currentValidation = validations[activeStep];
   const isLastStep = activeStep === steps.length - 1;
@@ -150,7 +154,7 @@ function NewUser() {
                               color="light"
                               onClick={handleBack}
                             >
-                              back
+                              {t("btn_back")}
                             </MDButton>
                           )}
                           <MDButton
@@ -159,7 +163,7 @@ function NewUser() {
                             variant="gradient"
                             color="dark"
                           >
-                            {isLastStep ? "send" : "next"}
+                            {isLastStep ? t("btn_send") : t("btn_next")}
                           </MDButton>
                         </MDBox>
                       </MDBox>

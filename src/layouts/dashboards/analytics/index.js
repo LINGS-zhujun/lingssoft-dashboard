@@ -18,6 +18,9 @@ import Grid from "@mui/material/Grid";
 import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -44,6 +47,7 @@ import booking2 from "assets/images/products/product-2-min.jpg";
 import booking3 from "assets/images/products/product-3-min.jpg";
 
 function Analytics() {
+  const { t } = useTranslation("page_analytics");
   const { sales, tasks } = reportsLineChartData;
 
   // Action buttons for the BookingCard
@@ -78,14 +82,14 @@ function Analytics() {
       <MDBox pb={3}>
         <MDBox mb={3} ml={1}>
           <MDTypography variant="h4" fontWeight="bold">
-            Analytics
+            {t("title")}
           </MDTypography>
           <MDTypography
             variant="button"
             fontWeight="regular"
             sx={{ fontSize: "16px", color: "#737373" }}
           >
-            Check the sales, value and bounce rate by country.
+            {t("subtitle")}
           </MDTypography>
         </MDBox>
         <MDBox>
@@ -94,9 +98,9 @@ function Analytics() {
               <MDBox mb={3}>
                 <ReportsBarChart
                   color="success"
-                  title="website views"
-                  description="Last Campaign Performance"
-                  date="campaign sent 2 days ago"
+                  title={t("website_views")}
+                  description={t("last_campaign")}
+                  date={t("campaign_sent")}
                   chart={reportsBarChartData}
                 />
               </MDBox>
@@ -105,13 +109,13 @@ function Analytics() {
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="success"
-                  title="daily sales"
+                  title={t("daily_sales")}
                   description={
                     <>
-                      (<strong>+15%</strong>) increase in today sales.
+                      (<strong>+15%</strong>) {t("increase_today")}
                     </>
                   }
-                  date="updated 4 min ago"
+                  date={t("updated_4_min")}
                   chart={sales}
                 />
               </MDBox>
@@ -120,9 +124,9 @@ function Analytics() {
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="success"
-                  title="completed tasks"
-                  description="Last Campaign Performance"
-                  date="just updated"
+                  title={t("completed_tasks")}
+                  description={t("last_campaign")}
+                  date={t("just_updated")}
                   chart={tasks}
                 />
               </MDBox>
@@ -135,12 +139,12 @@ function Analytics() {
               <MDBox>
                 <ComplexStatisticsCard
                   icon="weekend"
-                  title="Bookings"
+                  title={t("bookings")}
                   count={281}
                   percentage={{
                     color: "success",
                     amount: "+55%",
-                    label: "than lask week",
+                    label: t("than_last_week"),
                   }}
                 />
               </MDBox>
@@ -149,12 +153,12 @@ function Analytics() {
               <MDBox>
                 <ComplexStatisticsCard
                   icon="leaderboard"
-                  title="Today's Users"
+                  title={t("todays_users")}
                   count="2,300"
                   percentage={{
                     color: "success",
                     amount: "+3%",
-                    label: "than last month",
+                    label: t("than_last_month"),
                   }}
                 />
               </MDBox>
@@ -163,12 +167,12 @@ function Analytics() {
               <MDBox>
                 <ComplexStatisticsCard
                   icon="store"
-                  title="Revenue"
+                  title={t("revenue")}
                   count="34k"
                   percentage={{
                     color: "success",
                     amount: "+1%",
-                    label: "than yesterday",
+                    label: t("than_yesterday"),
                   }}
                 />
               </MDBox>
@@ -177,12 +181,12 @@ function Analytics() {
               <MDBox>
                 <ComplexStatisticsCard
                   icon="person_add"
-                  title="Followers"
+                  title={t("followers")}
                   count="+91"
                   percentage={{
                     color: "success",
                     amount: "",
-                    label: "Just updated",
+                    label: t("just_updated"),
                   }}
                 />
               </MDBox>

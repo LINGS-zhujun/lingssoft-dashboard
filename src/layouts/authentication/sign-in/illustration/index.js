@@ -35,23 +35,23 @@ import IllustrationLayout from "layouts/authentication/components/IllustrationLa
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 
 function Illustration() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("page_sign_in_illustration");
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
   return (
     <IllustrationLayout
-      title={t("auth.sign_in")}
-      description={t("auth.sign_in_desc")}
+      title={t("sign_in")}
+      description={t("sign_in_desc")}
       illustration={bgImage}
     >
       <MDBox component="form" role="form">
         <MDBox mb={2}>
-          <MDInput type="email" label={t("auth.email")} fullWidth />
+          <MDInput type="email" label={t("email")} fullWidth />
         </MDBox>
         <MDBox mb={2}>
-          <MDInput type="password" label={t("auth.password")} fullWidth />
+          <MDInput type="password" label={t("password")} fullWidth />
         </MDBox>
         <MDBox display="flex" alignItems="center" ml={-1}>
           <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -62,17 +62,17 @@ function Illustration() {
             onClick={handleSetRememberMe}
             sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
           >
-            &nbsp;&nbsp;{t("auth.remember_me")}
+            &nbsp;&nbsp;{t("remember_me")}
           </MDTypography>
         </MDBox>
         <MDBox mt={4} mb={1}>
           <MDButton variant="gradient" color="info" size="large" fullWidth>
-            {t("auth.sign_in_button")}
+            {t("sign_in_button")}
           </MDButton>
         </MDBox>
         <MDBox mt={3} textAlign="center">
           <MDTypography variant="button" color="text">
-            {t("auth.no_account")}{" "}
+            {t("no_account")}{" "}
             <MDTypography
               component={Link}
               to="/authentication/sign-up/cover"
@@ -81,7 +81,7 @@ function Illustration() {
               fontWeight="medium"
               textGradient
             >
-              {t("auth.sign_up")}
+              {t("sign_up")}
             </MDTypography>
           </MDTypography>
         </MDBox>
