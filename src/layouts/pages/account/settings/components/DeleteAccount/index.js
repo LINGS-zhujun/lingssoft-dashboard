@@ -19,7 +19,6 @@ import Card from "@mui/material/Card";
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
 // react-i18next
