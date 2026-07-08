@@ -1,3 +1,21 @@
 {
-  "title": "kanban Page"
+  "backlog": "待办事项",
+  "in_progress": "进行中",
+  "in_review": "审查中",
+  "done": "已完成",
+  "card_title_placeholder": "更改我以更改标题",
+  "drag_placeholder": "拖动我到“进行中”部分",
+  "pending": "待处理",
+  "errors": "错误",
+  "updates": "更新",
+  "in_testing": "测试中",
+  "add": "添加",
+  "cancel": "取消",
+  "website_design": "网站设计：博客部分和个人资料详情的新卡片",
+  "fix_firefox": "修复 Firefox 错误",
+  "responsive_changes": "响应式更改",
+  "change_images_dim": "更改图片尺寸",
+  "update_links": "更新链接",
+  "redesign_home": "主页重新设计",
+  "schedule_winter": "安排冬季活动"
 }

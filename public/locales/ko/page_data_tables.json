@@ -1,3 +1,11 @@
-{
-  "title": "data_tables 페이지"
+﻿{
+    "col_position":  "직위",
+    "description":  "가볍고 확장 가능하며 종속성이 없는 Javascript HTML 테이블 플러그인입니다.",
+    "title_simple":  "데이터 테이블 (기본)",
+    "col_age":  "나이",
+    "col_start_date":  "입사일",
+    "col_name":  "이름",
+    "col_office":  "사무실",
+    "col_salary":  "연봉",
+    "title_search":  "데이터 테이블 (검색)"
 }

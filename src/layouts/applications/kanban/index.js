@@ -21,6 +21,9 @@ import Board from "@asseinfo/react-kanban";
 // react-html-parser components
 import parse from "html-react-parser";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // uuid is a library for generating unique id
 import { v4 as uuidv4 } from "uuid";
 
@@ -48,6 +51,7 @@ import boards from "layouts/applications/kanban/data";
 import { useMaterialUIController } from "context";
 
 function Kanban() {
+  const { t } = useTranslation("page_kanban");
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
@@ -83,7 +87,7 @@ function Kanban() {
           })}
         >
           <Board
-            initialBoard={boards}
+            initialBoard={boards(t)}
             allowAddCard
             allowAddColumn
             renderColumnHeader={({ id, title }, { addCard }) => (
@@ -120,7 +124,7 @@ function Kanban() {
                           setFormValue("");
                         }}
                       >
-                        add
+                        {t("add")}
                       </MDButton>
                       <MDBox ml={1}>
                         <MDButton
@@ -129,7 +133,7 @@ function Kanban() {
                           size="small"
                           onClick={closeNewCardForm}
                         >
-                          cancel
+                          {t("cancel")}
                         </MDButton>
                       </MDBox>
                     </MDBox>
