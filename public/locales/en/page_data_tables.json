@@ -1,3 +1,11 @@
-{
-  "title": "data_tables Page"
+﻿{
+    "col_position":  "Position",
+    "description":  "A lightweight, extendable, dependency-free javascript HTML table plugin.",
+    "title_simple":  "Datatable Simple",
+    "col_age":  "Age",
+    "col_start_date":  "Start Date",
+    "col_name":  "Name",
+    "col_office":  "Office",
+    "col_salary":  "Salary",
+    "title_search":  "Datatable Search"
 }

@@ -1,3 +1,11 @@
-{
-  "title": "data_tables Page"
+﻿{
+    "col_position":  "职位",
+    "description":  "一个轻量级、可扩展且无依赖的Javascript HTML表格插件。",
+    "title_simple":  "数据表格（基本）",
+    "col_age":  "年龄",
+    "col_start_date":  "入职日期",
+    "col_name":  "姓名",
+    "col_office":  "办公室",
+    "col_salary":  "薪水",
+    "title_search":  "数据表格（搜索）"
 }

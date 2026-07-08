@@ -16,6 +16,9 @@ Coded by www.creative-tim.com
 // @mui material components
 import Card from "@mui/material/Card";
 
+// react-i18next
+import { useTranslation } from "react-i18next";
+
 // Material Dashboard 3 PRO React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -30,6 +33,8 @@ import DataTable from "examples/Tables/DataTable";
 import dataTableData from "layouts/applications/data-tables/data/dataTableData";
 
 function DataTables() {
+  const { t } = useTranslation("page_data_tables");
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -38,25 +43,25 @@ function DataTables() {
           <Card>
             <MDBox p={3} lineHeight={1}>
               <MDTypography variant="h5" fontWeight="medium">
-                Datatable Simple
+                {t("title_simple")}
               </MDTypography>
               <MDTypography variant="button" color="text">
-                A lightweight, extendable, dependency-free javascript HTML table plugin.
+                {t("description")}
               </MDTypography>
             </MDBox>
-            <DataTable table={dataTableData} />
+            <DataTable table={dataTableData(t)} />
           </Card>
         </MDBox>
         <Card>
           <MDBox p={3} lineHeight={1}>
             <MDTypography variant="h5" fontWeight="medium">
-              Datatable Search
+              {t("title_search")}
             </MDTypography>
             <MDTypography variant="button" color="text">
-              A lightweight, extendable, dependency-free javascript HTML table plugin.
+              {t("description")}
             </MDTypography>
           </MDBox>
-          <DataTable table={dataTableData} canSearch />
+          <DataTable table={dataTableData(t)} canSearch />
         </Card>
       </MDBox>
       <Footer />

@@ -1,3 +1,21 @@
 {
-  "title": "kanban Page"
+  "backlog": "バックログ",
+  "in_progress": "進行中",
+  "in_review": "レビュー中",
+  "done": "完了",
+  "card_title_placeholder": "タイトルを変更するにはここを変更",
+  "drag_placeholder": "「進行中」にドラッグしてください",
+  "pending": "保留中",
+  "errors": "エラー",
+  "updates": "アップデート",
+  "in_testing": "テスト中",
+  "add": "追加",
+  "cancel": "キャンセル",
+  "website_design": "ウェブサイトデザイン：ブログとプロフィールの新しいカード",
+  "fix_firefox": "Firefoxエラーの修正",
+  "responsive_changes": "レスポンシブ変更",
+  "change_images_dim": "画像のサイズ変更",
+  "update_links": "リンクの更新",
+  "redesign_home": "ホームページの再設計",
+  "schedule_winter": "冬のキャンペーンのスケジュール設定"
 }

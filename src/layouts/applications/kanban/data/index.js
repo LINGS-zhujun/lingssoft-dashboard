@@ -29,27 +29,27 @@ import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 import team5 from "assets/images/team-5.jpg";
 
-const boards = {
+const boards = (t) => ({
   columns: [
     {
       id: uuidv4(),
-      title: "Backlog",
+      title: t("backlog"),
       cards: [
         {
           id: uuidv4(),
-          template: "Change me to change title",
+          template: t("card_title_placeholder"),
         },
         {
           id: uuidv4(),
-          template: "Drag me to 'In progress' section",
+          template: t("drag_placeholder"),
         },
         {
           id: uuidv4(),
           template: (
             <Card
               image={officeDark}
-              badge={{ color: "dark", label: "pending" }}
-              content="Website Design: New cards for blog section and profile details"
+              badge={{ color: "dark", label: t("pending") }}
+              content={t("website_design")}
               attachedFiles={3}
               members={[team1, team2, team3]}
             />
@@ -59,14 +59,14 @@ const boards = {
     },
     {
       id: uuidv4(),
-      title: "In progress",
+      title: t("in_progress"),
       cards: [
         {
           id: uuidv4(),
           template: (
             <Card
-              badge={{ color: "error", label: "errors" }}
-              content="Fix firefox errors"
+              badge={{ color: "error", label: t("errors") }}
+              content={t("fix_firefox")}
               attachedFiles={9}
               members={[team2, team3]}
             />
@@ -76,7 +76,7 @@ const boards = {
           id: uuidv4(),
           template: (
             <Card
-              badge={{ color: "info", label: "updates" }}
+              badge={{ color: "info", label: t("updates") }}
               content="Argon Dashboard PRO - React"
               attachedFiles={3}
               members={[team5, team4]}
@@ -88,7 +88,7 @@ const boards = {
           template: (
             <Card
               image={meeting}
-              badge={{ color: "info", label: "updates" }}
+              badge={{ color: "info", label: t("updates") }}
               content="ReactJS v17 Updates"
               attachedFiles={3}
               members={[team1, team2, team3]}
@@ -99,14 +99,14 @@ const boards = {
     },
     {
       id: uuidv4(),
-      title: "In review",
+      title: t("in_review"),
       cards: [
         {
           id: uuidv4(),
           template: (
             <Card
-              badge={{ color: "warning", label: "in testing" }}
-              content="Responsive Changes"
+              badge={{ color: "warning", label: t("in_testing") }}
+              content={t("responsive_changes")}
               attachedFiles={11}
               members={[team3, team2]}
             />
@@ -116,8 +116,8 @@ const boards = {
           id: uuidv4(),
           template: (
             <Card
-              badge={{ color: "success", label: "in review" }}
-              content="Change images dimension"
+              badge={{ color: "success", label: t("in_review") }}
+              content={t("change_images_dim")}
               progress={80}
               members={[team3]}
             />
@@ -127,8 +127,8 @@ const boards = {
           id: uuidv4(),
           template: (
             <Card
-              badge={{ color: "info", label: "in review" }}
-              content="Update links"
+              badge={{ color: "info", label: t("in_review") }}
+              content={t("update_links")}
               progress={60}
               attachedFiles={6}
               members={[team5, team1]}
@@ -139,15 +139,15 @@ const boards = {
     },
     {
       id: uuidv4(),
-      title: "Done",
+      title: t("done"),
       cards: [
         {
           id: uuidv4(),
           template: (
             <Card
               image={homeDecore}
-              badge={{ color: "success", label: "done" }}
-              content="Redesign for the home page"
+              badge={{ color: "success", label: t("done") }}
+              content={t("redesign_home")}
               attachedFiles={8}
               members={[team5, team1, team4]}
             />
@@ -157,8 +157,8 @@ const boards = {
           id: uuidv4(),
           template: (
             <Card
-              badge={{ color: "success", label: "done" }}
-              content="Schedule winter campaign"
+              badge={{ color: "success", label: t("done") }}
+              content={t("schedule_winter")}
               attachedFiles={2}
               members={[team1, team4]}
             />
@@ -167,6 +167,6 @@ const boards = {
       ],
     },
   ],
-};
+});
 
 export default boards;

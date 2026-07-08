@@ -13,14 +13,14 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-const dataTableData = {
+const dataTableData = (t) => ({
   columns: [
-    { Header: "name", accessor: "name", width: "20%" },
-    { Header: "position", accessor: "position", width: "25%" },
-    { Header: "office", accessor: "office" },
-    { Header: "age", accessor: "age", width: "7%" },
-    { Header: "start date", accessor: "startDate" },
-    { Header: "salary", accessor: "salary" },
+    { Header: t("col_name"), accessor: "name", width: "20%" },
+    { Header: t("col_position"), accessor: "position", width: "25%" },
+    { Header: t("col_office"), accessor: "office" },
+    { Header: t("col_age"), accessor: "age", width: "7%" },
+    { Header: t("col_start_date"), accessor: "startDate" },
+    { Header: t("col_salary"), accessor: "salary" },
   ],
 
   rows: [
@@ -482,6 +482,6 @@ const dataTableData = {
       salary: "$201,191",
     },
   ],
-};
+});
 
 export default dataTableData;

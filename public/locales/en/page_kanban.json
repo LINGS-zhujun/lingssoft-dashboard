@@ -1,3 +1,21 @@
 {
-  "title": "kanban Page"
+  "backlog": "Backlog",
+  "in_progress": "In progress",
+  "in_review": "In review",
+  "done": "Done",
+  "card_title_placeholder": "Change me to change title",
+  "drag_placeholder": "Drag me to 'In progress' section",
+  "pending": "pending",
+  "errors": "errors",
+  "updates": "updates",
+  "in_testing": "in testing",
+  "add": "add",
+  "cancel": "cancel",
+  "website_design": "Website Design: New cards for blog section and profile details",
+  "fix_firefox": "Fix firefox errors",
+  "responsive_changes": "Responsive Changes",
+  "change_images_dim": "Change images dimension",
+  "update_links": "Update links",
+  "redesign_home": "Redesign for the home page",
+  "schedule_winter": "Schedule winter campaign"
 }

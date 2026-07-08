@@ -1,3 +1,11 @@
-{
-  "title": "data_tables Page"
+﻿{
+    "col_position":  "役職",
+    "description":  "軽量で拡張可能、依存関係のないJavascript HTMLテーブルプラグインです。",
+    "title_simple":  "データテーブル（基本）",
+    "col_age":  "年齢",
+    "col_start_date":  "入社日",
+    "col_name":  "名前",
+    "col_office":  "オフィス",
+    "col_salary":  "給与",
+    "title_search":  "データテーブル（検索）"
 }
