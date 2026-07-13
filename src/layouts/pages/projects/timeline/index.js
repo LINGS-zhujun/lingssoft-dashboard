@@ -13,6 +13,9 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -30,10 +33,22 @@ import TimelineItem from "examples/Timeline/TimelineItem";
 import timelineData from "layouts/pages/projects/timeline/data/timelineData";
 
 function Timeline() {
-  const renderTimelineItems = timelineData.map(
-    ({ color, icon, title, dateTime, description, badges, lastItem }) => (
+  const { t } = useTranslation("page_timeline");
+
+  const translatedTimelineData = useMemo(() => {
+    return timelineData.map((item) => ({
+      ...item,
+      title: t(item.title),
+      dateTime: t(item.dateTime),
+      description: t(item.description),
+      badges: item.badges ? item.badges.map((b) => b.startsWith("#") ? b : t(b)) : [],
+    }));
+  }, [t]);
+
+  const renderTimelineItems = translatedTimelineData.map(
+    ({ color, icon, title, dateTime, description, badges, lastItem }, index) => (
       <TimelineItem
-        key={title + color}
+        key={title + color + index}
         color={color}
         icon={icon}
         title={title}
@@ -51,10 +66,10 @@ function Timeline() {
       <MDBox my={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} lg={6}>
-            <TimelineList title="Timeline with dotted line">{renderTimelineItems}</TimelineList>
+            <TimelineList title={t("timeline_with_dotted_line")}>{renderTimelineItems}</TimelineList>
           </Grid>
           <Grid item xs={12} lg={6}>
-            <TimelineList title="Timeline with dotted line" dark>
+            <TimelineList title={t("timeline_with_dotted_line")} dark>
               {renderTimelineItems}
             </TimelineList>
           </Grid>
