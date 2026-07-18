@@ -5,6 +5,7 @@
 */
 
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
@@ -39,6 +40,7 @@ const getStoredMessages = () => {
 };
 
 function ChatbotPanel() {
+  const { t } = useTranslation();
   const [controller, dispatch] = useMaterialUIController();
   const { openChatbot, chatbotSaveHistory, darkMode, pageContext, chatbotAiUrl } = controller;
   const [message, setMessage] = useState("");
@@ -91,7 +93,7 @@ function ChatbotPanel() {
         {
           id: Date.now() + 1,
           role: "assistant",
-          content: data.answer || "답변을 받아왔습니다.",
+          content: data.answer || t("chatbot.response_received"),
         },
       ]);
     } catch (error) {
@@ -101,7 +103,7 @@ function ChatbotPanel() {
         {
           id: Date.now() + 1,
           role: "assistant",
-          content: "API 호출 중 오류가 발생했습니다. 백엔드 서버 연결을 확인해주세요.",
+          content: t("chatbot.api_error"),
         },
       ]);
     } finally {
@@ -132,7 +134,7 @@ function ChatbotPanel() {
         pb={0.5}
         px={3}
       >
-        <MDTypography variant="h5">AI Chatbot</MDTypography>
+        <MDTypography variant="h5">{t("chatbot.title")}</MDTypography>
         <Icon
           sx={({ typography: { size }, palette: { dark, white } }) => ({
             fontSize: `${size.lg} !important`,
@@ -216,9 +218,9 @@ function ChatbotPanel() {
               >
                 <Icon fontSize="medium">smart_toy</Icon>
               </MDBox>
-              <MDTypography variant="h6">AI Chatbot</MDTypography>
+              <MDTypography variant="h6">{t("chatbot.title")}</MDTypography>
               <MDTypography variant="button" color="text">
-                Start a conversation from the input below.
+                {t("chatbot.start_conversation")}
               </MDTypography>
             </>
           )}
@@ -244,7 +246,7 @@ function ChatbotPanel() {
             }
             label={
               <MDTypography variant="button" color="text">
-                현재 페이지 내용 같이 전송
+                {t("chatbot.send_page_context")}
               </MDTypography>
             }
             sx={{ ml: 0, mb: 1 }}
@@ -252,8 +254,8 @@ function ChatbotPanel() {
           <MDBox display="flex" alignItems="center" gap={1}>
             <MDInput
               fullWidth
-              label="Message"
-              placeholder="Ask something"
+              label={t("chatbot.message_label")}
+              placeholder={t("chatbot.message_placeholder")}
               size="small"
               value={message}
               onChange={({ target }) => setMessage(target.value)}

@@ -18,5 +18,14 @@
     "sign_in_button": "登录",
     "no_account": "还没有账号？",
     "sign_up": "注册"
+  },
+  "chatbot": {
+    "title": "AI 聊天机器人",
+    "response_received": "已收到回复。",
+    "api_error": "调用API时发生错误。请检查后端服务器连接。",
+    "send_page_context": "一起发送当前页面内容",
+    "start_conversation": "请在下方输入框开始对话。",
+    "message_label": "消息",
+    "message_placeholder": "问点什么吧"
   }
 }

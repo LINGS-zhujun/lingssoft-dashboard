@@ -18,5 +18,14 @@
     "sign_in_button": "サインイン",
     "no_account": "アカウントをお持ちでないですか？",
     "sign_up": "サインアップ"
+  },
+  "chatbot": {
+    "title": "AIチャットボット",
+    "response_received": "回答を受信しました。",
+    "api_error": "API呼び出し中にエラーが発生しました。バックエンドサーバーの接続を確認してください。",
+    "send_page_context": "現在のページ内容を一緒に送信",
+    "start_conversation": "下の入力欄から会話を始めてください。",
+    "message_label": "メッセージ",
+    "message_placeholder": "何か質問してください"
   }
 }

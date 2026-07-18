@@ -18,5 +18,14 @@
     "sign_in_button": "Sign In",
     "no_account": "Don't have an account?",
     "sign_up": "Sign Up"
+  },
+  "chatbot": {
+    "title": "AI Chatbot",
+    "response_received": "Response received.",
+    "api_error": "An error occurred while calling the API. Please check the backend server connection.",
+    "send_page_context": "Send current page context",
+    "start_conversation": "Start a conversation from the input below.",
+    "message_label": "Message",
+    "message_placeholder": "Ask something"
   }
 }

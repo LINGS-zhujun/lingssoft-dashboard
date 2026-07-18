@@ -18,5 +18,14 @@
     "sign_in_button": "로그인",
     "no_account": "계정이 없으신가요?",
     "sign_up": "회원가입"
+  },
+  "chatbot": {
+    "title": "AI 챗봇",
+    "response_received": "답변을 받아왔습니다.",
+    "api_error": "API 호출 중 오류가 발생했습니다. 백엔드 서버 연결을 확인해주세요.",
+    "send_page_context": "현재 페이지 내용 같이 전송",
+    "start_conversation": "아래 입력창에서 대화를 시작하세요.",
+    "message_label": "메시지",
+    "message_placeholder": "무엇이든 물어보세요"
   }
 }
